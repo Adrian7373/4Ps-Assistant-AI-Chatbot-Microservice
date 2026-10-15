@@ -6,7 +6,7 @@ const CHATBOT_API_URL = process.env.REACT_APP_CHATBOT_API_URL || 'http://localho
 const ChatbotWidget = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [input, setInput] = useState("");
-    const [messages, setMessages] = useState([{ sender: "bot", text: "Hello! How can I assist you today?" }]);
+    const [messages, setMessages] = useState([{ sender: "bot", text: "Hello! May katanungan ba kayo tungkol sa 4Ps Cabanatuan City?" }]);
     const hasWokenServer = useRef(false);
 
     // Stores the exact format Gemini requires for context memory
@@ -57,7 +57,7 @@ const ChatbotWidget = () => {
             {isOpen ? (
                 <div className="w-80 h-96 bg-[#171717] border border-neutral-800 rounded-lg shadow-2xl flex flex-col text-neutral-200">
                     <div className="bg-[#1C1C1E] border-b border-neutral-800 text-neutral-300 p-3 flex justify-between items-center rounded-t-lg">
-                        <strong>AI Assistant</strong>
+                        <strong>4Ps Cabanatuan Assistant</strong>
                         <button onClick={() => setIsOpen(false)} className="hover:text-white transition-colors">✕</button>
                     </div>
 
@@ -84,7 +84,7 @@ const ChatbotWidget = () => {
             ) : (
                 <button onClick={() => setIsOpen(true)} className="bg-neutral-800 hover:bg-neutral-700 border border-neutral-700 text-neutral-200 p-4 rounded-full shadow-lg transition-colors flex items-center gap-2 font-medium">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
-                    Ask AI
+                    Ask 4Ps AI
                 </button>
             )}
         </div>
